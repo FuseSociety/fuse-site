@@ -4,6 +4,9 @@ body {
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif; }
 
+p {
+  line-height: 1.8rem; }
+
 .home-navbar {
   position: fixed;
   display: flex;
@@ -58,7 +61,8 @@ body {
   .home-title .background-image {
     background: url("../images/people/ont_exec_team_gray.JPG");
     background-size: cover;
-    background-position: center top; }
+    background-position: center top;
+    background-attachment: fixed; }
 
 .background-image {
   position: absolute;
@@ -127,8 +131,7 @@ button {
   border: none;
   background: transparent; }
   button:focus {
-    outline: none;
-    background: transparent; }
+    outline: none; }
 
 .home-stats {
   padding: 0 3rem;
@@ -155,3 +158,41 @@ button {
 
 .fuse-orange {
   color: #ed7d32 !important; }
+
+.home-about, .home-events {
+  background: white;
+  width: 100%;
+  padding: 0 5rem;
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: auto;
+  display: flex; }
+  .home-about h2, .home-events h2 {
+    text-transform: uppercase;
+    color: #203864; }
+  .home-about .underline, .home-events .underline {
+    text-decoration: underline; }
+
+.home-about-text {
+  font-size: 1.2rem;
+  min-width: 300px;
+  max-width: 720px;
+  margin-right: 2rem;
+  box-sizing: border-box; }
+
+.home-about-video {
+  width: 100%;
+  min-width: 300px;
+  max-width: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .home-about-video .video {
+    height: auto;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box; }
+
+.home-events {
+  font-size: 1.2rem;
+  padding-top: 0; }

@@ -8,6 +8,7 @@ $shadow-medium: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)
 $shadow-light: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 $text-size-normal: 1rem;
 $text-size-heading: 1.2rem;
+$text-size-large: 1.5rem;
 $quick-transition: 0.3s;
 $quicker-transition: 0.2s;
 $colour-transluscent: rgba($colour-white, 0.9);
@@ -15,6 +16,10 @@ $colour-transluscent: rgba($colour-white, 0.9);
 body {
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+p {
+  line-height: 1.8rem;
 }
 
 .home-navbar {
@@ -88,6 +93,7 @@ body {
     background: url('../images/people/ont_exec_team_gray.JPG');
     background-size: cover;
     background-position: center top;
+    background-attachment: fixed;
   }
 }
 
@@ -176,7 +182,6 @@ button {
 
   &:focus {
     outline: none;
-    background: transparent;
   }
 }
 
@@ -217,3 +222,50 @@ button {
   color: $colour-fuse-orange !important;
 }
 
+.home-about, .home-events {
+  background: $colour-white;
+  width: 100%;
+  padding: 0 5rem;
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+
+  h2 {
+    text-transform: uppercase;
+    color: $colour-fuse-blue;
+  }
+
+  .underline {
+    text-decoration: underline;
+  }
+}
+
+.home-about-text {
+  font-size: $text-size-heading;
+  min-width: 300px;
+  max-width: 720px;
+  margin-right: 2rem;
+  box-sizing: border-box;
+}
+
+.home-about-video {
+  width: 100%;
+  min-width: 300px;
+  max-width: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .video {
+    height: auto;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+}
+
+.home-events {
+  font-size: $text-size-heading;
+  padding-top: 0;
+}
