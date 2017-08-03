@@ -1,2 +1,2 @@
 # fuse
-the new fuse site
+The new website of FUSE Society. Currently under construction.
