@@ -1,0 +1,157 @@
+/* variables
+============================================================================ */
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif; }
+
+.home-navbar {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  background: transparent;
+  align-items: center;
+  width: 100%;
+  transition: border 0.3s;
+  color: white;
+  z-index: 1;
+  padding: 0 3rem;
+  box-sizing: border-box; }
+  .home-navbar.stick {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    color: black; }
+    .home-navbar.stick .selected, .home-navbar.stick span:hover {
+      border-bottom: 2px solid black; }
+
+.nav-logo {
+  margin: 1rem;
+  margin-right: auto; }
+  .nav-logo img {
+    display: block;
+    width: 8rem;
+    transition: 0.3s; }
+    .nav-logo img.stick {
+      width: 5rem; }
+
+.nav-item {
+  text-transform: uppercase;
+  list-style: none;
+  padding: 2rem 1.5rem;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 1.2rem; }
+  .nav-item span {
+    border-bottom: 1px solid transparent;
+    padding-bottom: 10px;
+    transition: 0.2s;
+    cursor: pointer; }
+    .nav-item span.selected, .nav-item span:hover {
+      border-bottom: 1px solid white; }
+
+.home-title {
+  height: 85%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; }
+  .home-title .background-image {
+    background: url("../images/people/ont_exec_team_gray.JPG");
+    background-size: cover;
+    background-position: center top; }
+
+.background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1; }
+
+.bow-style {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  background: white;
+  clip-path: polygon(0 0, 50% 100%, 100% 0, 100% 100%, 0 100%, 0 0);
+  -webkit-clip-path: polygon(0 0, 50% 100%, 100% 0, 100% 100%, 0 100%, 0 0);
+  bottom: 0;
+  left: 0;
+  margin-bottom: -2px; }
+
+.bow-logo {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: url("../images/fuse_icon_borderless.png");
+  bottom: 0;
+  left: 0;
+  margin-left: calc(50% - 40px);
+  margin-bottom: -40px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-size: cover;
+  border: 3px solid white;
+  cursor: pointer;
+  transition: 0.2s; }
+  .bow-logo:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+
+.home-content {
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 2px black; }
+  .home-content h1 {
+    font-size: 3rem; }
+  .home-content h2 {
+    font-size: 2rem; }
+  .home-content h3 {
+    font-size: 1.1rem;
+    font-weight: normal; }
+  .home-content button {
+    margin-top: 10px;
+    text-transform: uppercase;
+    background: rgba(32, 56, 100, 0.7);
+    border-radius: 3px;
+    padding: 0 15px;
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transition: 0.2s; }
+    .home-content button:hover {
+      transform: scale(1.05);
+      background: rgba(32, 56, 100, 0.75); }
+
+button {
+  border: none;
+  background: transparent; }
+  button:focus {
+    outline: none;
+    background: transparent; }
+
+.home-stats {
+  padding: 0 3rem;
+  background: white;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex; }
+
+.stat {
+  width: 25%;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: inline-block;
+  flex: 1;
+  text-align: center; }
+  .stat.outer {
+    padding-top: 0; }
+  .stat h1 {
+    font-weight: normal; }
+  .stat i {
+    color: rgba(0, 0, 0, 0.8); }
+  .stat p {
+    font-size: 1.2rem; }
+
+.fuse-orange {
+  color: #ed7d32 !important; }
