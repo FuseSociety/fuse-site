@@ -12,9 +12,17 @@ $text-size-large: 1.5rem;
 $medium-transition: 0.6s;
 $quick-transition: 0.3s;
 $quicker-transition: 0.2s;
-$colour-transluscent: rgba($colour-white, 0.95);
 $border-button: 5px;
 $border-large: 10px;
+$padding-side-large: 5rem;
+
+%center-block {
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 $padding-side-large;
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -39,9 +47,8 @@ p {
   box-sizing: border-box;
 
   &.stick {
-    background: $colour-transluscent;
+    background: rgba($colour-fuse-blue, 0.9);
     box-shadow: $shadow-medium;
-    color: $colour-black;
 
     .selected, span:hover {
       border-bottom: 2px solid $colour-black;
@@ -227,12 +234,9 @@ button {
 }
 
 .home-about, .home-events {
+  @extend %center-block;
   background: $colour-white;
-  width: 100%;
-  padding: 0 5rem;
   box-sizing: border-box;
-  max-width: 1440px;
-  margin: auto;
   display: flex;
 
   h2 {
@@ -314,12 +318,9 @@ button {
 }
 
 .home-branches {
-  width: 100%;
-  padding: 0.5rem 5rem;
-  max-width: 1440px;
+  @extend %center-block;
+  padding-top: 0.5rem $padding-side-large;
   display: flex;
-  box-sizing: border-box;
-  margin: auto;
 }
 
 .branch {
@@ -384,4 +385,6 @@ button {
 .home-events {
   font-size: $text-size-heading;
   padding-top: 2rem;
+  width: 100%;
+  margin: auto;
 }
