@@ -9,9 +9,12 @@ $shadow-light: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 $text-size-normal: 1rem;
 $text-size-heading: 1.2rem;
 $text-size-large: 1.5rem;
+$medium-transition: 0.6s;
 $quick-transition: 0.3s;
 $quicker-transition: 0.2s;
-$colour-transluscent: rgba($colour-white, 0.9);
+$colour-transluscent: rgba($colour-white, 0.95);
+$border-button: 5px;
+$border-large: 10px;
 
 body {
   margin: 0;
@@ -163,7 +166,7 @@ p {
     margin-top: 10px;
     text-transform: uppercase;
     background: rgba($colour-fuse-blue, 0.7);
-    border-radius: 3px;
+    border-radius: $border-button;
     padding: 0 15px;
     color: rgba($colour-white, 0.9);
     cursor: pointer;
@@ -207,6 +210,7 @@ button {
 
   h1 {
     font-weight: normal;
+    color: $colour-fuse-blue;
   }
 
   i {
@@ -265,7 +269,119 @@ button {
   }
 }
 
+.action-bar {
+  width: 100%;
+  background: $colour-fuse-orange;
+}
+
+.action-bar-content {
+  width: 100%;
+  color: $colour-white;
+  padding: 10px;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  max-width: 1080px;
+  margin: auto;
+
+  h2 {
+    font-weight: normal;
+    display: inline;
+    text-align: center;
+    flex: 1;
+    padding: 0 15px;
+  }
+
+  button {
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+    text-transform: uppercase;
+    background: $colour-fuse-blue;
+    color: $colour-white;
+    white-space: nowrap;
+    font-size: $text-size-normal;
+    border-radius: $border-button;
+    cursor: pointer;
+    transition: $quick-transition;
+    padding: 20px 30px;
+
+    &:hover {
+      filter: saturate(1.5);
+      box-shadow: $shadow-light;
+    }
+  }
+}
+
+.home-branches {
+  width: 100%;
+  padding: 0.5rem 5rem;
+  max-width: 1440px;
+  display: flex;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+.branch {
+  flex: 1;
+  position: relative;
+
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: $text-size-large;
+    color: $colour-fuse-blue;
+  }
+
+  .ontario {
+    background: url('../images/toronto_small.jpg');
+    background-size: cover;
+    background-position: center;
+
+    &::before {
+      right: 0;
+      transform: translateX(100%);
+      clip-path: polygon(100% 0, 60% 0, 70% 100%, 100% 100%, 100% 0);
+      -webkit-clip-path: polygon(100% 0, 60% 0, 70% 100%, 100% 100%, 100% 0);
+    }
+  }
+
+  .bc {
+    background: url('../images/vancouver_small.jpg');
+    background-size: cover;
+
+    &::before {
+      transform: translateX(-100%);
+      clip-path: polygon(0 0, 0 100%, 30% 100%, 40% 0, 0 0);
+      -webkit-clip-path: polygon(0 0, 0 100%, 30% 100%, 40% 0, 0 0);
+    }
+  }
+
+  .branch-image {
+    width: 70%;
+    height: 200px;
+    margin: auto;
+    border-radius: $border-large;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      height: 200px;
+      width: 100%;
+      background: rgba($colour-white, 0.5);
+      transition: $medium-transition;
+    }
+
+    &:hover::before {
+      transform: translateX(0);
+    }
+  }
+}
+
 .home-events {
   font-size: $text-size-heading;
-  padding-top: 0;
+  padding-top: 2rem;
 }
