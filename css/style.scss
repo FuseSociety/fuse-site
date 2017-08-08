@@ -51,7 +51,7 @@ p {
     box-shadow: $shadow-medium;
 
     .selected, span:hover {
-      border-bottom: 2px solid $colour-black;
+      border-bottom: 2px solid $colour-white;
     }
   }
 }
@@ -80,13 +80,13 @@ p {
   font-size: $text-size-heading;
 
   span {
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
     padding-bottom: 10px;
     transition: $quicker-transition;
     cursor: pointer;
 
     &.selected, &:hover {
-      border-bottom: 1px solid $colour-white;
+      border-bottom: 2px solid $colour-white;
     }
   }
 }
@@ -387,4 +387,6 @@ button {
   padding-top: 2rem;
   width: 100%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
