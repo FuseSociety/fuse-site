@@ -39,6 +39,38 @@
 <!-- home-page -->
 <div class="home-page">
 
+  <!-- mobile-navbar -->
+  <!-- <div class="mobile-navbar-button"></div> -->
+
+<!-- 
+  <div class="mobile-navbar-wrapper">
+    <div class="mobile-navbar">
+      <li class="mobile-nav-item">
+        <span class="selected">Home</span>
+      </li>
+      <li class="mobile-nav-item">
+        <span>About</span>
+        <ul class="mobile-nav-sub-container">
+          <li class="nav-sub">Item</li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <span>Branches</span>
+      </li>
+      <li class="mobile-nav-item">
+        <span>Events</span>
+      </li>
+      <li class="mobile-nav-item">
+        <span>Contact</span>
+      </li>
+      <li class="mobile-nav-item">
+        <span>Get Involved</span>
+      </li>
+    </div>
+  </div> -->
+
+  <!-- /mobile-navbar -->
+
   <!-- navbar -->
   <div class="home-navbar">
     <a class="nav-logo">
@@ -48,35 +80,47 @@
       <span class="selected">Home</span>
     </li>
     <li class="nav-item">
-      <span>About</span>
+      <span>
+        <a href="about">About</a>
+      </span>
+    </li>
+    <!-- <li class="nav-item">
+      <span>Branches</span>
+    </li> -->
+    <li class="nav-item">
+      <span class="no-underline">Events</span>
       <ul class="nav-sub-container">
-        <li class="nav-sub">Item</li>
+        <li class="nav-sub">
+          <a href="case-competition">BC Case <br> Competition</a>
+        </li>
       </ul>
     </li>
     <li class="nav-item">
-      <span>Branches</span>
+      <span>
+        <a href="contact">Contact</a>
+      </span>
     </li>
     <li class="nav-item">
-      <span>Events</span>
-    </li>
-    <li class="nav-item">
-      <span>Contact</span>
-    </li>
-    <li class="nav-item">
-      <span>Get Involved</span>
+      <span class="involve" onclick="showHiringPackage()">Get Involved</span>
     </li>
   </div>
   <!-- /navbar -->
+
+  <!-- hiring-package -->
+  <div class="hiring-package" onclick="hideHiringPackage()">
+    <iframe src="https://drive.google.com/file/d/0ByfEz98AO2jtMEFOTHBFS1VBTzQ/preview"></iframe>
+  </div>
+  <!-- /hiring-package -->
 
   <!-- home-title -->
   <div class="home-title">
     <div class="background-image"></div>
     <div class="bow-style"></div>
-    <div class="bow-logo"></div>
+    <div class="bow-logo" onclick="showHiringPackage()"></div>
     <div class="home-content">
       <h1>Fuse: Redefining Business</h1>
-      <h2>Now Hiring</h2>
-      <button><h3>Apply Now</h3></button>
+      <h2>Revolutionizing high school education</h2>
+      <button><h3><a href="contact">Join Us</a></h3></button>
     </div>
   </div>
   <!-- /home-title -->
@@ -86,33 +130,33 @@
 
     <!-- stat -->
     <div class="stat outer">
-      <h1>30</h1>
+      <h1>4</h1>
+      <i class="fa fa-3x fa-globe"></i>
+      <p>FUSE spans across <span class="fuse-orange">4 provinces</span> in Canada: British Columbia, Ontario, Calgary, and Québec.</p>
+    </div>
+    <!-- /stat -->
+
+    <!-- stat -->
+    <div class="stat">
+      <h1>12</h1>
+      <i class="fa fa-3x fa-building"></i>
+      <p>We represent <span class="fuse-orange">12 major cities</span> and are growing quickly.</p>
+    </div>
+    <!-- /stat -->
+
+    <!-- stat -->
+    <div class="stat">
+      <h1>28</h1>
       <i class="fa fa-3x fa-graduation-cap"></i>
-      <p>We have a lot of cool grads on our board.</p>
-    </div>
-    <!-- /stat -->
-
-    <!-- stat -->
-    <div class="stat">
-      <h1>420</h1>
-      <i class="fa fa-3x fa-free-code-camp fuse-orange"></i>
-      <p>We're lit. :)</p>
-    </div>
-    <!-- /stat -->
-
-    <!-- stat -->
-    <div class="stat">
-      <h1>17</h1>
-      <i class="fa fa-3x fa-address-card"></i>
-      <p>Networking and professional development at its best.</p>
+      <p>Students from <span class="fuse-orange">28 schools</span> are a part of our organization.</p>
     </div>
     <!-- /stat -->
 
     <!-- stat -->
     <div class="stat outer">
-      <h1>45</h1>
-      <i class="fa fa-3x fa-coffee"></i>
-      <p>How to become a successful entrepreneur 101: drink coffee.</p>
+      <h1>150+</h1>
+      <i class="fa fa-3x fa-user"></i>
+      <p>Over <span class="fuse-orange">150 members</span> and continuing to expand.</p>
     </div>
     <!-- /stat -->
   
@@ -123,7 +167,7 @@
   <div class="home-about">
     <div class="home-about-text">
       <h2>Making high school business <span class="underline">great</span> again.</h2>
-      <p>FUSE was founded on the idea of relevance. We recognize that living in a rapidly changing society, every day, every hour is the beginning of something new—a new idea, gadget, company, medical breakthrough, economic landscape, the list goes on. The reality is that we don’t know what the job market or economy will look like 10 or 20 years from now.</p>
+      <p>FUSE was founded on the idea of relevance. We recognize that living in a rapidly changing society, every day, every hour is the beginning of something new—a new idea, gadget, company, medical breakthrough, economic landscape, the list goes on. We aim to bridge the gap between theory and application by distributing a hands-on, case-based curriculum to high school business clubs.</p>
     </div>
     <div class="home-about-video">
       <div class="video">
@@ -137,7 +181,7 @@
   <div class="action-bar">
     <div class="action-bar-content">
       <h2>Join us now. You won't regret it.</h2>
-      <button>Get Involved</button>
+      <button><a href="contact">Contact Us</a></button>
     </div>
   </div>
 
@@ -152,6 +196,16 @@
       <h1>Ontario</h1>
       <div class="branch-image ontario"></div>
     </div>
+
+    <div class="branch">
+      <h1>Calgary</h1>
+      <div class="branch-image calgary"></div>
+    </div>
+
+    <div class="branch">
+      <h1>Québec</h1>
+      <div class="branch-image quebec"></div>
+    </div>
   </div>
   <!-- /home-branches -->
 
@@ -159,7 +213,7 @@
   <div class="home-events">
     <h2>Events built for <span class="underline">you</span>.</h2>
 
-    <div class="event">
+    <!-- <div class="event">
       <div class="event-image next-event"></div>
       <div class="event-content">
         <h1><a href="/events#next-event">Next Event</a></h1>
@@ -171,12 +225,12 @@
         </h3>
         <p>The next event held by FUSE.</p>
       </div>
-    </div>
+    </div> -->
 
     <div class="event">
       <div class="event-image case-competition"></div>
       <div class="event-content">
-        <h1><a href="/events#case-competition">Fuse Case Competition</a></h1>
+        <h1><a href="case-competition">Fuse Case Competition</a></h1>
         <h2><i class="fa fa-map-marker"></i> Vancouver, British Columbia</h2>
         <h3>
           <a href="https://www.facebook.com/events/753391801505399/" target="_blank">
@@ -191,7 +245,30 @@
 
   <!-- home-sponsors -->
   <div class="home-sponsors">
-    <div class="scrolling small">
+    <div class="box" id="sponsors">
+      <div class="primary">
+        <div id="sponsor_logos">
+          <img src="case-competition/competition/images/sponsor1.png" alt="sponsor">
+          <img src="case-competition/competition/images/sponsor2.png" alt="sponsor">
+          <img src="case-competition/competition/images/sponsor3.png" alt="sponsor">
+          <img src="case-competition/competition/images/sponsor4.png" alt="sponsor">
+          <img src="case-competition/competition/images/sponsor5.png" alt="sponsor">
+          <img src="case-competition/competition/images/sponsor6.png" alt="sponsor">
+          <img src="case-competition/competition/images/sponsor7.png" alt="sponsor">
+          <img src="case-competition/competition/images/sponsor8.png" alt="sponsor">
+          <img src="case-competition/competition/images/sponsor9.png" alt="sponsor">
+          <img src="case-competition/competition/images/sponsor10.png" alt="sponsor">
+          <img src="case-competition/competition/images/sponsor11.png" alt="sponsor">
+          <img src="case-competition/competition/images/sponsor12.png" alt="sponsor">
+          <img src="case-competition/competition/images/sponsor13.png" alt="sponsor">
+          <img src="case-competition/competition/images/sponsor14.png" alt="sponsor">
+          <img src="case-competition/competition/images/sponsor15.png" alt="sponsor">
+          <img src="case-competition/competition/images/sponsor16.png" alt="sponsor">
+          <img src="case-competition/competition/images/sponsor17.png" alt="sponsor">
+        </div>
+      </div>
+    </div>
+    <!-- <div class="scrolling small">
       <a href="https://google.ca" target="_blank">
         <img src="images/fuse_logo_white.png" alt="sponsor">
       </a>
@@ -241,7 +318,7 @@
       <a href="https://google.ca" target="_blank">
         <img src="images/fuse_logo_white.png" alt="sponsor">
       </a>
-    </div>
+    </div> -->
   </div>
   <!-- /home-sponsors -->
 
@@ -272,7 +349,7 @@
       <a href="https://www.linkedin.com/company/fuse-society" target="_blank">
         <i class="fa fa-linkedin fa-2x"></i>
       </a>
-      <a href="mailto:contact@fusesociety.com">
+      <a href="contact">
         <i class="fa fa-envelope fa-2x"></i>
       </a>
       <p class="ownership">©FUSE Society. All rights reserved.</p>

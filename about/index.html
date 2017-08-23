@@ -1,0 +1,169 @@
+<!-- meta data -->
+<meta charset="UTF-8">
+<meta name="description" content="Fuse Society's Website">
+<meta name="keywords" content="HTML,CSS,JavaScript">
+<meta name="author" content="Alan Ma">
+<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/png" href="../images/fuse_icon.png"/>
+<title>FUSE Society - About</title>
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-103674927-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- facebook JavScript SDK -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- dependencies -->
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/smooth-scrolling.js"></script>
+<script src="../js/script.js"></script>
+
+<!-- home-page -->
+<div class="home-page">
+
+  <!-- mobile-navbar -->
+  <!-- <div class="mobile-navbar-button"></div> -->
+
+<!-- 
+  <div class="mobile-navbar-wrapper">
+    <div class="mobile-navbar">
+      <li class="mobile-nav-item">
+        <span class="selected">Home</span>
+      </li>
+      <li class="mobile-nav-item">
+        <span>About</span>
+        <ul class="mobile-nav-sub-container">
+          <li class="nav-sub">Item</li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <span>Branches</span>
+      </li>
+      <li class="mobile-nav-item">
+        <span>Events</span>
+      </li>
+      <li class="mobile-nav-item">
+        <span>Contact</span>
+      </li>
+      <li class="mobile-nav-item">
+        <span>Get Involved</span>
+      </li>
+    </div>
+  </div> -->
+
+  <!-- /mobile-navbar -->
+
+  <!-- navbar -->
+  <div class="home-navbar">
+    <a class="nav-logo">
+      <img src="../images/fuse_logo_transparent.png" alt="FUSE Logo">
+    </a>
+    <li class="nav-item">
+      <span>
+          <a href="/">Home</a>
+      </span>
+    </li>
+    <li class="nav-item">
+      <span class="selected">
+        About
+      </span>
+    </li>
+    <!-- <li class="nav-item">
+      <span>Branches</span>
+    </li> -->
+    <li class="nav-item">
+      <span class="no-underline">Events</span>
+      <ul class="nav-sub-container">
+        <li class="nav-sub">
+          <a href="../case-competition">BC Case <br> Competition</a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <span>
+        <a href="../contact">Contact</a>
+      </span>
+    </li>
+    <li class="nav-item">
+      <span class="involve" onclick="showHiringPackage()">Get Involved</span>
+    </li>
+  </div>
+  <!-- /navbar -->
+
+  <!-- hiring-package -->
+  <div class="hiring-package" onclick="hideHiringPackage()">
+    <iframe src="https://drive.google.com/file/d/0ByfEz98AO2jtMEFOTHBFS1VBTzQ/preview"></iframe>
+  </div>
+  <!-- /hiring-package -->
+
+  <div class="about-cover"></div>
+
+  <!-- about-bar -->
+  <div class="about-wrapper">
+    <div class="about-bar">
+        <h2>About Us</h2>
+      </div>
+  </div>
+  <!-- /about-bar -->
+
+  <!-- about-body -->
+  <div class="about-body">
+
+  </div>
+
+  <!-- home-footer -->
+  <div class="home-footer">
+    <div class="footer-content">
+      <div class="footer-block left">
+        <div class="fb-page" data-href="https://www.facebook.com/fusesociety" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/fusesociety" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/fusesociety">FUSE Society</a></blockquote></div>
+      </div>
+
+      <div class="footer-block middle">
+        <img src="../images/fuse_logo_white.png" alt=""fuse logo>
+        <p>We are a youth-led organization that exists to bridge the growing divide between academia and the real world. We provide the means for thousands of secondary students across Canada to develop the skills and confidence necessary to succeed in the world of business.</p>
+      </div>
+
+      <div class="footer-block right">
+        <div class="fb-page" data-href="https://www.facebook.com/fusesociety" data-tabs="timeline" data-height="350" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/fusesociety" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/fusesociety">FUSE Society</a></blockquote></div>
+      </div>
+    </div>
+
+    <div class="footer-media">
+      <a href="https://www.facebook.com/fusesociety" target="_blank">
+        <i class="fa fa-facebook fa-2x"></i>
+      </a>
+      <a href="https://www.instagram.com/fusesociety/" target="_blank">
+        <i class="fa fa-instagram fa-2x"></i>
+      </a>
+      <a href="https://www.linkedin.com/company/fuse-society" target="_blank">
+        <i class="fa fa-linkedin fa-2x"></i>
+      </a>
+      <a href="../contact">
+        <i class="fa fa-envelope fa-2x"></i>
+      </a>
+      <p class="ownership">©FUSE Society. All rights reserved.</p>
+    </div>
+  </div>
+  <!-- /home-footer -->
+</div>
+<!-- /home-page -->
+
+
