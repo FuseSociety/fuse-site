@@ -34,12 +34,18 @@ p {
   color: white;
   z-index: 1;
   padding: 0 3rem;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  height: 90px; }
   .home-navbar.stick {
     background: rgba(32, 56, 100, 0.9);
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
     .home-navbar.stick .selected, .home-navbar.stick span:hover {
       border-bottom: 2px solid white; }
+    .home-navbar.stick .nav-sub-container {
+      background: transparent;
+      width: 150px; }
+    .home-navbar.stick .nav-sub {
+      background: rgba(32, 56, 100, 0.9); }
   @media (max-width: 1024px) {
     .home-navbar {
       display: none; } }
@@ -49,8 +55,9 @@ p {
   margin-right: auto; }
   .nav-logo img {
     display: block;
-    width: 8rem;
-    transition: 0.3s; }
+    width: 6rem;
+    transition: 0.3s;
+    cursor: pointer; }
     .nav-logo img.stick {
       width: 5rem; }
 
@@ -60,14 +67,45 @@ p {
   padding: 2rem 1.5rem;
   white-space: nowrap;
   text-align: center;
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  position: relative;
+  z-index: 1; }
   .nav-item span {
     border-bottom: 2px solid transparent;
     padding-bottom: 10px;
     transition: 0.2s;
-    cursor: pointer; }
+    cursor: pointer;
+    position: relative;
+    z-index: 1; }
     .nav-item span.selected, .nav-item span:hover {
       border-bottom: 2px solid white; }
+      .nav-item span.selected + .nav-sub-container, .nav-item span:hover + .nav-sub-container {
+        visibility: visible;
+        opacity: 1; }
+
+.nav-sub-container {
+  position: absolute;
+  background: rgba(237, 125, 50, 0.7);
+  margin: 0 0 0 -1.5rem;
+  width: 100%;
+  padding: 90px 0 10px 0;
+  top: 0;
+  text-align: left;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s; }
+  .nav-sub-container:hover {
+    visibility: visible;
+    opacity: 1; }
+
+.nav-sub {
+  list-style: none;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  background: transparent; }
+  .nav-sub:hover {
+    text-decoration: underline; }
 
 .home-title {
   height: 85%;
@@ -400,10 +438,38 @@ button {
   margin-top: 50px;
   max-width: 100%;
   min-height: auto;
-  background: #113984; }
+  background: #113984;
+  overflow: hidden;
+  position: relative; }
+  .home-sponsors:hover .scrolling {
+    animation-play-state: paused !important; }
   @media (max-width: 1024px) {
     .home-sponsors {
       padding: 1rem; } }
+  .home-sponsors .scrolling {
+    display: flex;
+    width: 100%;
+    justify-content: space-around; }
+    .home-sponsors .scrolling.first {
+      animation: scroll-left-first infinite 15s linear; }
+      @media (max-width: 720px) {
+        .home-sponsors .scrolling.first {
+          visibility: hidden; } }
+    .home-sponsors .scrolling.second {
+      position: absolute;
+      left: 0;
+      animation: scroll-left-second infinite 15s linear; }
+      @media (max-width: 720px) {
+        .home-sponsors .scrolling.second {
+          visibility: hidden; } }
+    .home-sponsors .scrolling.small {
+      animation: scroll-left infinite 15s linear;
+      visibility: hidden;
+      position: absolute;
+      left: 0; }
+      @media (max-width: 720px) {
+        .home-sponsors .scrolling.small {
+          visibility: visible; } }
   .home-sponsors img {
     transition: 0.3s;
     height: 100px;
@@ -416,6 +482,27 @@ button {
     @media (max-width: 1024px) {
       .home-sponsors img {
         height: 70px; } }
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%); }
+  
+  100% {
+    transform: translateX(-100%); } }
+
+@keyframes scroll-left-first {
+  0% {
+    transform: translateX(0); }
+  
+  100% {
+    transform: translateX(-100%); } }
+
+@keyframes scroll-left-second {
+  0% {
+    transform: translateX(100%); }
+  
+  100% {
+    transform: translateX(0); } }
 
 .home-footer {
   max-width: 100%;
@@ -451,7 +538,8 @@ button {
       width: 100%;
       height: 68px;
       background: #2b374d;
-      z-index: 1; }
+      z-index: 1;
+      left: 0; }
     @media (max-width: 1500px) {
       .footer-block.right {
         display: none; } }
