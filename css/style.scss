@@ -74,6 +74,10 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+input, textarea, button {
+  font-family: 'Source Sans Pro', sans-serif !important;
+}
+
 p {
   line-height: 1.8rem;
 }
@@ -307,7 +311,7 @@ p {
 }
 
 .mobile-navbar-wrapper {
-  display: none;
+  visibility: hidden;
   position: fixed;
   z-index: 5;
   width: 100%;
@@ -322,9 +326,41 @@ p {
           flex-direction: column;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.mobile-navbar-top {
+  height: 3.5rem;
+  width: auto;
+  position: fixed;
+  background: $colour-fuse-blue;
+  border-radius: 3px;
+  padding: 0 0.5rem;
+  // justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 5;
+  -webkit-box-shadow: $shadow-light;
+          box-shadow: $shadow-light;
+  cursor: pointer;
+
+  .mobile-navbar-logo {
+    height: 2.5rem;
+    width: auto;
+
+    img {
+      height: 100%;
+      width: auto;
+      display: block;
+    }
+  }
+
+  display: none;
 
   @include respond-to('med') {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -433,6 +469,13 @@ p {
   -o-transition: $quicker-transition;
   transition: $quicker-transition;
 
+  @include respond-to('med') {
+    height: 50px;
+    width: 50px;
+    margin-left: calc(50% - 25px);
+    margin-bottom: -25px;
+  }
+
   &:hover {
     -webkit-transform: translateY(-10px);
         -ms-transform: translateY(-10px);
@@ -450,15 +493,28 @@ p {
 
   h1 {
     font-size: 3rem;
+
+    @include respond-to('med') {
+      font-size: 1.5rem;
+    }
   }
 
   h2 {
     font-size: 2rem;
+
+    @include respond-to('med') {
+      font-size: 1.2rem;
+    }
   }
 
   h3 {
     font-size: 1.1rem;
     font-weight: normal;
+
+    @include respond-to('med') {
+      font-size: 1rem;
+      margin: 0;
+    }
   }
 
   button {
@@ -480,11 +536,19 @@ p {
       -webkit-filter: saturate(1.5);
               filter: saturate(1.5);
     }
+
+    @include respond-to('med') {
+      padding: 5px 10px;
+    }
   }
 
   a {
     text-decoration: none;
     color: inherit;
+
+    @include respond-to('med') {
+      font-size: 0.9rem;
+    }
   }
 }
 
@@ -541,6 +605,10 @@ button {
 
   i {
     color: rgba($colour-black, 0.8);
+    
+    @include respond-to('med') {
+      font-size: 2rem;
+    }
   }
 
   p {
@@ -548,6 +616,10 @@ button {
 
     @include respond-to('xs') {
       margin: 0.1rem 0;
+    }
+
+    @include respond-to('med') {
+      font-size: 1rem;
     }
   }
 
@@ -598,8 +670,9 @@ button {
           box-sizing: border-box;
 
   @include respond-to('med') {
-    text-align: center;
+    text-align: justify;
     margin: 0;
+    font-size: 1rem;
   }
 }
 
@@ -662,6 +735,10 @@ button {
     @include respond-to('sm') {
       display: none;
     }
+
+    @include respond-to('med') {
+      font-size: 1.3rem;
+    }
   }
 
   button {
@@ -690,11 +767,19 @@ button {
     @include respond-to('sm') {
       margin: auto;
     }
+
+    @include respond-to('med') {
+      padding: 10px 20px;
+    }
   }
 
   a {
     text-decoration: none;
     color: inherit;
+
+    @include respond-to('med') {
+      font-size: 0.9rem;
+    }
   }
 }
 
@@ -717,6 +802,10 @@ button {
     text-transform: uppercase;
     font-size: $text-size-large;
     color: $colour-fuse-blue;
+
+    @include respond-to('med') {
+      font-size: 1.25rem;
+    }
   }
 
   .ontario {
@@ -821,6 +910,10 @@ button {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+
+  @include respond-to('med') {
+    font-size: 1rem;
+  }
 }
 
 .event {
@@ -862,10 +955,18 @@ button {
 
   h1 {
     font-size: $text-size-large;
+
+    @include respond-to('med') {
+      font-size: 1.4rem;
+    }
   }
 
   h2 {
     font-size: $text-size-heading;
+
+    @include respond-to('med') {
+      font-size: 1.2rem;
+    }
   }
 
   h3 i {
@@ -874,6 +975,10 @@ button {
     -o-transition: $quick-transition;
     transition: $quick-transition;
     color: $colour-black;
+
+    @include respond-to('med') {
+      font-size: 1rem;
+    }
 
     &:hover {
       color: $colour-fuse-blue;
@@ -917,7 +1022,7 @@ button {
   margin-top: 50px;
   max-width: 100%;
   min-height: auto;
-  
+
   overflow: hidden;
   position: relative;
 
@@ -1194,6 +1299,10 @@ button {
   width: 100%;
   background: url('../images/skyline-about_small.jpg');
   background-size: cover;
+
+  @include respond-to('med') {
+    height: 90px;
+  }
 }
 
 .contact-cover {
@@ -1201,6 +1310,10 @@ button {
   width: 100%;
   background: url('../images/skyline-contact_small.jpg');
   background-size: cover;
+
+  @include respond-to('med') {
+    height: 90px;
+  }
 }
 
 .about-wrapper {
@@ -1218,11 +1331,20 @@ button {
   height: 5rem;
   min-height: 5rem;
 
+  @include respond-to('med') {
+    height: 3rem;
+    min-height: 3rem;
+  }
+
   h2 {
     color: $colour-white;
     font-weight: normal;
     font-size: 2rem;
     text-transform: uppercase;
+
+    @include respond-to('med') {
+      font-size: 1.5rem;
+    }
   }
 }
 
@@ -1235,11 +1357,20 @@ button {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 
+  @include respond-to('med') {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
   h1 {
     font-size: 1.8rem;
     text-transform: uppercase;
     color: $colour-fuse-blue;
     margin-bottom: 0.5rem;
+
+    @include respond-to('med') {
+      font-size: 1.3rem;
+    }
   }
 
   p {
@@ -1276,7 +1407,6 @@ button {
   display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  float: left;
 
   @include respond-to('med') {
     width: 100%;
@@ -1315,6 +1445,10 @@ button {
     color: $colour-fuse-orange;
     font-weight: normal;
     text-transform: uppercase;
+
+    @include respond-to('med') {
+      font-size: 1.2rem;
+    }
   }
 
   p {

@@ -25,6 +25,9 @@ body {
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif; }
 
+input, textarea, button {
+  font-family: 'Source Sans Pro', sans-serif !important; }
+
 p {
   line-height: 1.8rem; }
 
@@ -224,7 +227,7 @@ p {
     text-decoration: underline; }
 
 .mobile-navbar-wrapper {
-  display: none;
+  visibility: hidden;
   position: fixed;
   z-index: 5;
   width: 100%;
@@ -239,9 +242,34 @@ p {
   flex-direction: column;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
+
+.mobile-navbar-top {
+  height: 3.5rem;
+  width: auto;
+  position: fixed;
+  background: #203864;
+  border-radius: 3px;
+  padding: 0 0.5rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 5;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+  display: none; }
+  .mobile-navbar-top .mobile-navbar-logo {
+    height: 2.5rem;
+    width: auto; }
+    .mobile-navbar-top .mobile-navbar-logo img {
+      height: 100%;
+      width: auto;
+      display: block; }
   @media (max-width: 1024px) {
-    .mobile-navbar-wrapper {
-      display: block; } }
+    .mobile-navbar-top {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; } }
 
 .mobile-navbar {
   width: 90%;
@@ -337,6 +365,12 @@ p {
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s; }
+  @media (max-width: 1024px) {
+    .bow-logo {
+      height: 50px;
+      width: 50px;
+      margin-left: calc(50% - 25px);
+      margin-bottom: -25px; } }
   .bow-logo:hover {
     -webkit-transform: translateY(-10px);
     -ms-transform: translateY(-10px);
@@ -351,11 +385,21 @@ p {
   text-shadow: 1px 1px 2px black; }
   .home-content h1 {
     font-size: 3rem; }
+    @media (max-width: 1024px) {
+      .home-content h1 {
+        font-size: 1.5rem; } }
   .home-content h2 {
     font-size: 2rem; }
+    @media (max-width: 1024px) {
+      .home-content h2 {
+        font-size: 1.2rem; } }
   .home-content h3 {
     font-size: 1.1rem;
     font-weight: normal; }
+    @media (max-width: 1024px) {
+      .home-content h3 {
+        font-size: 1rem;
+        margin: 0; } }
   .home-content button {
     margin-top: 10px;
     text-transform: uppercase;
@@ -373,9 +417,15 @@ p {
       transform: scale(1.05);
       -webkit-filter: saturate(1.5);
       filter: saturate(1.5); }
+    @media (max-width: 1024px) {
+      .home-content button {
+        padding: 5px 10px; } }
   .home-content a {
     text-decoration: none;
     color: inherit; }
+    @media (max-width: 1024px) {
+      .home-content a {
+        font-size: 0.9rem; } }
 
 button {
   border: none;
@@ -418,11 +468,17 @@ button {
         margin: 1rem 0 0.1rem 0; } }
   .stat i {
     color: rgba(0, 0, 0, 0.8); }
+    @media (max-width: 1024px) {
+      .stat i {
+        font-size: 2rem; } }
   .stat p {
     font-size: 1.2rem; }
     @media (max-width: 480px) {
       .stat p {
         margin: 0.1rem 0; } }
+    @media (max-width: 1024px) {
+      .stat p {
+        font-size: 1rem; } }
   @media (max-width: 1024px) {
     .stat {
       width: 50%;
@@ -459,8 +515,9 @@ button {
   box-sizing: border-box; }
   @media (max-width: 1024px) {
     .home-about-text {
-      text-align: center;
-      margin: 0; } }
+      text-align: justify;
+      margin: 0;
+      font-size: 1rem; } }
 
 .home-about-video {
   width: 100%;
@@ -514,6 +571,9 @@ button {
     @media (max-width: 720px) {
       .action-bar-content h2 {
         display: none; } }
+    @media (max-width: 1024px) {
+      .action-bar-content h2 {
+        font-size: 1.3rem; } }
   .action-bar-content button {
     display: inline-block;
     position: relative;
@@ -537,9 +597,15 @@ button {
     @media (max-width: 720px) {
       .action-bar-content button {
         margin: auto; } }
+    @media (max-width: 1024px) {
+      .action-bar-content button {
+        padding: 10px 20px; } }
   .action-bar-content a {
     text-decoration: none;
     color: inherit; }
+    @media (max-width: 1024px) {
+      .action-bar-content a {
+        font-size: 0.9rem; } }
 
 .home-branches {
   padding-top: 0.5rem 5rem; }
@@ -556,6 +622,9 @@ button {
     text-transform: uppercase;
     font-size: 1.5rem;
     color: #203864; }
+    @media (max-width: 1024px) {
+      .branch h1 {
+        font-size: 1.25rem; } }
   .branch .ontario {
     background: url("../images/toronto_small.jpg");
     background-size: cover;
@@ -633,6 +702,9 @@ button {
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start; }
+  @media (max-width: 1024px) {
+    .home-events {
+      font-size: 1rem; } }
 
 .event {
   width: 100%;
@@ -663,14 +735,23 @@ button {
     text-transform: uppercase; }
   .event h1 {
     font-size: 1.5rem; }
+    @media (max-width: 1024px) {
+      .event h1 {
+        font-size: 1.4rem; } }
   .event h2 {
     font-size: 1.2rem; }
+    @media (max-width: 1024px) {
+      .event h2 {
+        font-size: 1.2rem; } }
   .event h3 i {
     font-size: 1.5rem;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
     color: black; }
+    @media (max-width: 1024px) {
+      .event h3 i {
+        font-size: 1rem; } }
     .event h3 i:hover {
       color: #203864; }
   .event a {
@@ -940,12 +1021,18 @@ button {
   width: 100%;
   background: url("../images/skyline-about_small.jpg");
   background-size: cover; }
+  @media (max-width: 1024px) {
+    .about-cover {
+      height: 90px; } }
 
 .contact-cover {
   height: 170px;
   width: 100%;
   background: url("../images/skyline-contact_small.jpg");
   background-size: cover; }
+  @media (max-width: 1024px) {
+    .contact-cover {
+      height: 90px; } }
 
 .about-wrapper {
   background: #ed7d32;
@@ -958,11 +1045,18 @@ button {
 .about-bar, .contact-bar {
   height: 5rem;
   min-height: 5rem; }
+  @media (max-width: 1024px) {
+    .about-bar, .contact-bar {
+      height: 3rem;
+      min-height: 3rem; } }
   .about-bar h2, .contact-bar h2 {
     color: white;
     font-weight: normal;
     font-size: 2rem;
     text-transform: uppercase; }
+    @media (max-width: 1024px) {
+      .about-bar h2, .contact-bar h2 {
+        font-size: 1.5rem; } }
 
 .about-body, .contact-body {
   min-height: 80%;
@@ -971,11 +1065,18 @@ button {
   align-items: flex-start;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem; }
+  @media (max-width: 1024px) {
+    .about-body, .contact-body {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem; } }
   .about-body h1, .contact-body h1 {
     font-size: 1.8rem;
     text-transform: uppercase;
     color: #203864;
     margin-bottom: 0.5rem; }
+    @media (max-width: 1024px) {
+      .about-body h1, .contact-body h1 {
+        font-size: 1.3rem; } }
   .about-body p, .contact-body p {
     margin-top: 0.5rem; }
 
@@ -1004,8 +1105,7 @@ button {
   width: 60%;
   display: inline-block;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  float: left; }
+  box-sizing: border-box; }
   @media (max-width: 1024px) {
     .about-text {
       width: 100%; } }
@@ -1038,6 +1138,9 @@ button {
     color: #ed7d32;
     font-weight: normal;
     text-transform: uppercase; }
+    @media (max-width: 1024px) {
+      .about-method h2 {
+        font-size: 1.2rem; } }
   .about-method p {
     padding: 0 0.5rem;
     margin-top: 0; }
