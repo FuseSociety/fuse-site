@@ -50,9 +50,14 @@ $padding-side-large: 5rem;
   max-width: 1440px;
   margin: auto;
   padding: 0 $padding-side-large;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   min-height: 35%;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 
   @include respond-to('lg') {
@@ -79,10 +84,18 @@ p {
 	width: 100%;
 	background: white;
 	z-index: 10;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	color: #555;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
 	transition: 0.5s;
 }
 
@@ -99,50 +112,72 @@ p {
 	top: -30px;
 	position: absolute;
 	width: 100%;
-	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	    -ms-transform: rotate(180deg);
+	        transform: rotate(180deg);
 }
 
 #loading span {
 	display: inline-block;
-	animation: bounce 1s infinite;
+	-webkit-animation: bounce 1s infinite;
+	        animation: bounce 1s infinite;
 }
 
 #loading #two {
-	animation-delay: 0.1s;
+	-webkit-animation-delay: 0.1s;
+	        animation-delay: 0.1s;
 }
 
 #loading #two {
-	animation-delay: 0.2s;
+	-webkit-animation-delay: 0.2s;
+	        animation-delay: 0.2s;
 }
 
 #loading #one {
-	animation-delay: 0.3s;
+	-webkit-animation-delay: 0.3s;
+	        animation-delay: 0.3s;
+}
+
+@-webkit-keyframes bounce {
+	0% {-webkit-transform: scale(1);transform: scale(1);}
+	50% {-webkit-transform: scale(1.5);transform: scale(1.5);}
+	100% {-webkit-transform: scale(1);transform: scale(1);}
 }
 
 @keyframes bounce {
-	0% {transform: scale(1);}
-	50% {transform: scale(1.5);}
-	100% {transform: scale(1);}
+	0% {-webkit-transform: scale(1);transform: scale(1);}
+	50% {-webkit-transform: scale(1.5);transform: scale(1.5);}
+	100% {-webkit-transform: scale(1);transform: scale(1);}
 }
 
 .home-navbar {
   position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   background: transparent;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
+  -webkit-transition: border $quick-transition;
+  -o-transition: border $quick-transition;
   transition: border $quick-transition;
   color: $colour-white;
   z-index: 1;
   padding: 0 3rem;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: 90px;
   top: 0;
 
   &.stick {
     background: rgba($colour-fuse-blue, 0.9);
-    box-shadow: $shadow-medium;
+    -webkit-box-shadow: $shadow-medium;
+            box-shadow: $shadow-medium;
 
     .selected, span:hover {
       border-bottom: 2px solid $colour-white;
@@ -154,7 +189,8 @@ p {
 
     .nav-sub {
       background: rgba($colour-fuse-blue, 0.9);
-      box-shadow: $shadow-light;
+      -webkit-box-shadow: $shadow-light;
+              box-shadow: $shadow-light;
     }
   }
 
@@ -175,6 +211,8 @@ p {
   img {
     display: block;
     width: 6rem;
+    -webkit-transition: $quick-transition;
+    -o-transition: $quick-transition;
     transition: $quick-transition;
     cursor: pointer;
 
@@ -198,6 +236,8 @@ p {
   span {
     border-bottom: 2px solid transparent;
     padding-bottom: 10px;
+    -webkit-transition: $quicker-transition;
+    -o-transition: $quicker-transition;
     transition: $quicker-transition;
     cursor: pointer;
     position: relative;
@@ -219,6 +259,8 @@ p {
     &.involve {
       background: $colour-fuse-orange;
       border-radius: $border-button;
+      -webkit-transition: $quicker-transition;
+      -o-transition: $quicker-transition;
       transition: $quicker-transition;
       padding: 10px;
 
@@ -240,6 +282,8 @@ p {
   text-align: left;
   visibility: hidden;
   opacity: 0;
+  -webkit-transition: visibility 0s, opacity $quick-transition;
+  -o-transition: visibility 0s, opacity $quick-transition;
   transition: visibility 0s, opacity $quick-transition;
 
   &:hover {
@@ -269,9 +313,15 @@ p {
   width: 100%;
   height: 100%;
   background: rgba($colour-black, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 
   @include respond-to('med') {
     display: block;
@@ -285,6 +335,8 @@ p {
 }
 
 .hiring-package {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   visibility: hidden;
   height: 100%;
@@ -292,16 +344,26 @@ p {
   background: rgba($colour-black, 0.8);
   position: fixed;
   z-index: 10;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   opacity: 0;
+  -webkit-transition: $medium-transition;
+  -o-transition: $medium-transition;
   transition: $medium-transition;
 
   iframe {
+    -webkit-transition: $medium-transition;
+    -o-transition: $medium-transition;
     transition: $medium-transition;
     width: 60%;
     height: 80%;
-    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%);
 
     @include respond-to('med') {
       height: 80%;
@@ -312,9 +374,15 @@ p {
 .home-title {
   height: 85%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
 
   .background-image {
@@ -356,15 +424,21 @@ p {
   left: 0;
   margin-left: calc(50% - 40px);
   margin-bottom: -40px;
-  box-shadow: $shadow-light;
+  -webkit-box-shadow: $shadow-light;
+          box-shadow: $shadow-light;
   background-size: cover;
   border: 3px solid $colour-white;
   cursor: pointer;
+  -webkit-transition: $quicker-transition;
+  -o-transition: $quicker-transition;
   transition: $quicker-transition;
 
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: $shadow-medium;
+    -webkit-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+            transform: translateY(-10px);
+    -webkit-box-shadow: $shadow-medium;
+            box-shadow: $shadow-medium;
   }
 }
 
@@ -395,11 +469,16 @@ p {
     padding: 0 15px;
     color: rgba($colour-white, 0.9);
     cursor: pointer;
+    -webkit-transition: $quicker-transition;
+    -o-transition: $quicker-transition;
     transition: $quicker-transition;
 
     &:hover {
-      transform: scale(1.05);
-      filter: saturate(1.5);
+      -webkit-transform: scale(1.05);
+          -ms-transform: scale(1.05);
+              transform: scale(1.05);
+      -webkit-filter: saturate(1.5);
+              filter: saturate(1.5);
     }
   }
 
@@ -422,12 +501,16 @@ button {
   padding: 1.5rem 0;
   background: $colour-white;
   width: 90%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: auto;
 
   @include respond-to('med') {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 
   @include respond-to('xs') {
@@ -438,7 +521,8 @@ button {
 .stat {
   width: 25%;
   padding: 1.5rem;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: inline-block;
   text-align: center;
 
@@ -497,8 +581,11 @@ button {
 
 .home-about {
   @include respond-to('med') {
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -507,7 +594,8 @@ button {
   min-width: 300px;
   max-width: 720px;
   margin-right: 2rem;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 
   @include respond-to('med') {
     text-align: center;
@@ -519,15 +607,22 @@ button {
   width: 100%;
   min-width: 300px;
   max-width: 540px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 
   .video {
     height: auto;
     width: 100%;
     padding: 2rem;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 
     @include respond-to('med') {
       padding: 1rem;
@@ -544,9 +639,14 @@ button {
   width: 100%;
   color: $colour-white;
   padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  box-sizing: border-box;
-  align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   max-width: 1080px;
   margin: auto;
 
@@ -554,7 +654,9 @@ button {
     font-weight: normal;
     display: inline;
     text-align: center;
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     padding: 0 15px;
 
     @include respond-to('sm') {
@@ -573,12 +675,16 @@ button {
     font-size: $text-size-normal;
     border-radius: $border-button;
     cursor: pointer;
+    -webkit-transition: $quick-transition;
+    -o-transition: $quick-transition;
     transition: $quick-transition;
     padding: 20px 30px;
 
     &:hover {
-      filter: saturate(1.5);
-      box-shadow: $shadow-light;
+      -webkit-filter: saturate(1.5);
+              filter: saturate(1.5);
+      -webkit-box-shadow: $shadow-light;
+              box-shadow: $shadow-light;
     }
 
     @include respond-to('sm') {
@@ -597,7 +703,8 @@ button {
   padding-top: 0.5rem $padding-side-large;
 
   @include respond-to('med') {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
@@ -619,7 +726,9 @@ button {
 
     &::before {
       right: 0;
-      transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+          -ms-transform: translateX(100%);
+              transform: translateX(100%);
       clip-path: polygon(100% 0, 60% 0, 70% 100%, 100% 100%, 100% 0);
       -webkit-clip-path: polygon(100% 0, 60% 0, 70% 100%, 100% 100%, 100% 0);
     }
@@ -630,7 +739,9 @@ button {
     background-size: cover;
 
     &::before {
-      transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+          -ms-transform: translateX(-100%);
+              transform: translateX(-100%);
       clip-path: polygon(0 0, 0 100%, 30% 100%, 40% 0, 0 0);
       -webkit-clip-path: polygon(0 0, 0 100%, 30% 100%, 40% 0, 0 0);
     }
@@ -643,7 +754,9 @@ button {
 
     &::before {
       right: 0;
-      transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+          -ms-transform: translateX(100%);
+              transform: translateX(100%);
       clip-path: polygon(100% 0, 60% 0, 70% 100%, 100% 100%, 100% 0);
       -webkit-clip-path: polygon(100% 0, 60% 0, 70% 100%, 100% 100%, 100% 0);
     }
@@ -654,7 +767,9 @@ button {
     background-size: cover;
 
     &::before {
-      transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+          -ms-transform: translateX(-100%);
+              transform: translateX(-100%);
       clip-path: polygon(0 0, 0 100%, 30% 100%, 40% 0, 0 0);
       -webkit-clip-path: polygon(0 0, 0 100%, 30% 100%, 40% 0, 0 0);
     }
@@ -675,11 +790,15 @@ button {
       height: 200px;
       width: 100%;
       background: rgba($colour-white, 0.5);
+      -webkit-transition: $medium-transition;
+      -o-transition: $medium-transition;
       transition: $medium-transition;
     }
 
     &:hover::before {
-      transform: translateX(0);
+      -webkit-transform: translateX(0);
+          -ms-transform: translateX(0);
+              transform: translateX(0);
     }
 
     @include respond-to('sm') {
@@ -695,8 +814,13 @@ button {
 .home-events {
   font-size: $text-size-heading;
   padding-top: 2rem;
-  flex-direction: column;
-  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .event {
@@ -746,6 +870,8 @@ button {
 
   h3 i {
     font-size: $text-size-large;
+    -webkit-transition: $quick-transition;
+    -o-transition: $quick-transition;
     transition: $quick-transition;
     color: $colour-black;
 
@@ -756,6 +882,8 @@ button {
 
   a {
     color: $colour-black;
+    -webkit-transition: $quick-transition;
+    -o-transition: $quick-transition;
     transition: $quick-transition;
     text-decoration: none;
 
@@ -783,17 +911,20 @@ button {
 .home-sponsors {
   @extend %centre-block;
   padding: 2rem 1rem;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 50px;
   max-width: 100%;
   min-height: auto;
-  background: $colour-fuse-blue-saturated;
+  
   overflow: hidden;
   position: relative;
 
   &:hover {
     .scrolling {
-      animation-play-state: paused !important;
+      -webkit-animation-play-state: paused !important;
+              animation-play-state: paused !important;
     }
   }
 
@@ -802,12 +933,16 @@ button {
   }
 
   .scrolling {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 
     &.first {
-      animation: scroll-left-first infinite 15s linear;
+      -webkit-animation: scroll-left-first infinite 15s linear;
+              animation: scroll-left-first infinite 15s linear;
 
       @include respond-to('sm') {
         visibility: hidden;
@@ -817,7 +952,8 @@ button {
     &.second {
       position: absolute;
       left: 0;
-      animation: scroll-left-second infinite 15s linear;
+      -webkit-animation: scroll-left-second infinite 15s linear;
+              animation: scroll-left-second infinite 15s linear;
 
       @include respond-to('sm') {
         visibility: hidden;
@@ -825,7 +961,8 @@ button {
     }
 
     &.small {
-      animation: scroll-left infinite 15s linear;
+      -webkit-animation: scroll-left infinite 15s linear;
+              animation: scroll-left infinite 15s linear;
       visibility: hidden;
       position: absolute;
       left: 0;
@@ -837,15 +974,21 @@ button {
   }
 
   img {
+    -webkit-transition: $quick-transition;
+    -o-transition: $quick-transition;
     transition: $quick-transition;
     height: 100px;
     width: auto;
     display: block;
-    flex: auto;
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
     margin: 20px;
 
     &:hover {
-      transform: scale(1.05);
+      -webkit-transform: scale(1.05);
+          -ms-transform: scale(1.05);
+              transform: scale(1.05);
     }
 
     @include respond-to('med') {
@@ -854,25 +997,41 @@ button {
   }
 }
 
+@-webkit-keyframes scroll-left {
+  0% { -webkit-transform: translateX(100%); transform: translateX(100%) }
+  100% { -webkit-transform: translateX(-100%); transform: translateX(-100%) }
+}
+
 @keyframes scroll-left {
-  0% { transform: translateX(100%) }
-  100% { transform: translateX(-100%) }
+  0% { -webkit-transform: translateX(100%); transform: translateX(100%) }
+  100% { -webkit-transform: translateX(-100%); transform: translateX(-100%) }
+}
+
+@-webkit-keyframes scroll-left-first {
+  0% { -webkit-transform: translateX(0); transform: translateX(0) }
+  100% { -webkit-transform: translateX(-100%); transform: translateX(-100%) }
 }
 
 @keyframes scroll-left-first {
-  0% { transform: translateX(0) }
-  100% { transform: translateX(-100%) }
+  0% { -webkit-transform: translateX(0); transform: translateX(0) }
+  100% { -webkit-transform: translateX(-100%); transform: translateX(-100%) }
+}
+
+@-webkit-keyframes scroll-left-second {
+  0% { -webkit-transform: translateX(100%); transform: translateX(100%) }
+  100% { -webkit-transform: translateX(0); transform: translateX(0) }
 }
 
 @keyframes scroll-left-second {
-  0% { transform: translateX(100%) }
-  100% { transform: translateX(0) }
+  0% { -webkit-transform: translateX(100%); transform: translateX(100%) }
+  100% { -webkit-transform: translateX(0); transform: translateX(0) }
 }
 
 #sponsors {
 	background: $colour-white;
   margin: 0;
-  box-shadow: $shadow-medium
+  -webkit-box-shadow: $shadow-medium;
+          box-shadow: $shadow-medium
 }
 
 #sponsors .primary {
@@ -880,10 +1039,16 @@ button {
 }
 
 #sponsor_logos {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	align-items: center;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	width: 100%;
 }
 
@@ -913,16 +1078,24 @@ button {
   @extend %centre-block;
   max-width: 100%;
   background: $colour-fuse-blue-unsaturated;
-  justify-content: center;
-  flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .footer-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   max-width: 1440px;
   width: 100%;
-  flex-wrap: wrap;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   overflow: hidden;
 }
 
@@ -971,33 +1144,47 @@ button {
 
 .footer-media {
   width: 100%;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   text-align: center;
 
   a {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     color: $colour-white;
     background: $colour-fuse-blue-saturated;
+    -webkit-transition: $quick-transition;
+    -o-transition: $quick-transition;
     transition: $quick-transition;
     border-radius: 50%;
     height: 3rem;
     width: 3rem;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-decoration: none;
-    box-shadow: $shadow-light;
+    -webkit-box-shadow: $shadow-light;
+            box-shadow: $shadow-light;
     margin: 5px;
 
     &:hover {
       background: $colour-fuse-orange;
-      box-shadow: $shadow-medium;
+      -webkit-box-shadow: $shadow-medium;
+              box-shadow: $shadow-medium;
     }
   }
 
   .ownership {
     margin-top: 10px;
     cursor: default;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     color: rgba($colour-white, 0.6);
   }
 }
@@ -1042,7 +1229,9 @@ button {
 .about-body, .contact-body {
   @extend %centre-block;
   min-height: 80%;
-  align-items: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 
@@ -1059,24 +1248,34 @@ button {
 }
 
 .about-body {
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .contact-body {
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .about-methods {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 0;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .about-text {
   width: 60%;
   display: inline-block;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   float: left;
 
   @include respond-to('med') {
@@ -1086,11 +1285,16 @@ button {
 
 .about-video {
   width: 40%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   float: right;
   padding: 1.5rem;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 
   @include respond-to('med') {
     width: 100%;
@@ -1100,7 +1304,8 @@ button {
 .about-method {
   width: 30%;
   text-align: center;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 
   @include respond-to('sm') {
     width: 100%;
@@ -1126,12 +1331,21 @@ button {
     border-radius: 50%;
     color: $colour-fuse-blue;
     background: $colour-white;
+    -webkit-transition: $quick-transition;
+    -o-transition: $quick-transition;
     transition: $quick-transition;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     font-size: 1.5rem;
-    box-shadow: $shadow-light;
+    -webkit-box-shadow: $shadow-light;
+            box-shadow: $shadow-light;
 
     &:hover {
       color: $colour-white;
@@ -1141,11 +1355,15 @@ button {
 }
 
 .contact-form {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 60%;
   float: left;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 
   @include respond-to('sm') {
     width: 100%;
@@ -1162,13 +1380,15 @@ button {
     height: 3rem;
     margin-top: 0.5rem;
     border: none;
-    box-shadow: $shadow-light;
+    -webkit-box-shadow: $shadow-light;
+            box-shadow: $shadow-light;
     padding: 0 0.5rem;
     font-size: 1rem;
 
     &:focus {
       outline: none;
-      box-shadow: $shadow-medium;
+      -webkit-box-shadow: $shadow-medium;
+              box-shadow: $shadow-medium;
     }
   }
 
@@ -1177,13 +1397,15 @@ button {
     height: 10rem;
     margin-top: 0.5rem;
     border: none;
-    box-shadow: $shadow-light;
+    -webkit-box-shadow: $shadow-light;
+            box-shadow: $shadow-light;
     padding: 0.5rem;
     font-size: 1rem;
 
     &:focus {
       outline: none;
-      box-shadow: $shadow-medium;
+      -webkit-box-shadow: $shadow-medium;
+              box-shadow: $shadow-medium;
     }
   }
 
@@ -1193,6 +1415,8 @@ button {
     background: $colour-fuse-blue-saturated;
     color: $colour-white;
     text-transform: uppercase;
+    -webkit-transition: $quick-transition;
+    -o-transition: $quick-transition;
     transition: $quick-transition;
     font-size: 1rem;
     padding: 1rem;
@@ -1203,7 +1427,9 @@ button {
     }
 
     &:hover {
-      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+              transform: scale(1.1);
     }
   }
 }
@@ -1213,7 +1439,8 @@ button {
   width: 40%;
   float: right;
   padding: 1.5rem;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   text-align: center;
 
   @include respond-to('sm') {
