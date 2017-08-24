@@ -426,6 +426,10 @@ p {
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
+
+    @include respond-to('med') {
+      background-attachment: scroll;
+    }
   }
 }
 
