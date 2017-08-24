@@ -670,9 +670,12 @@ button {
           box-sizing: border-box;
 
   @include respond-to('med') {
-    text-align: justify;
     margin: 0;
     font-size: 1rem;
+  }
+
+  p {
+    text-align: justify;
   }
 }
 
