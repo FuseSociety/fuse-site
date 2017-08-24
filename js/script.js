@@ -1,3 +1,23 @@
+// loading
+$(document).ready(function() {
+  setTimeout(function() {
+    document.getElementById("loading_container").style.opacity = "0";
+    setTimeout(function() {
+  
+      document.getElementById("loading_container").style.display = "none";
+      document.getElementById("container").style.display = "block";
+  
+      setTimeout(function() {
+        document.getElementById("container").style.opacity = "1";
+  
+        load_background();
+  
+      }, 700);
+  
+    }, 500);
+  }, 500);
+});
+
 // navbar transition
 $(function(){
   $(window).scroll(function() {

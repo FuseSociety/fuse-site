@@ -73,6 +73,58 @@ p {
   line-height: 1.8rem;
 }
 
+#loading_container {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background: white;
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #555;
+	transition: 0.5s;
+}
+
+#loading {
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+
+#loading p {
+	font-size: 5rem;
+	margin: 0 auto;
+	padding: 0;
+	top: -30px;
+	position: absolute;
+	width: 100%;
+	transform: rotate(180deg);
+}
+
+#loading span {
+	display: inline-block;
+	animation: bounce 1s infinite;
+}
+
+#loading #two {
+	animation-delay: 0.1s;
+}
+
+#loading #two {
+	animation-delay: 0.2s;
+}
+
+#loading #one {
+	animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+	0% {transform: scale(1);}
+	50% {transform: scale(1.5);}
+	100% {transform: scale(1);}
+}
+
 .home-navbar {
   position: fixed;
   display: flex;
@@ -970,7 +1022,7 @@ button {
 }
 
 .contact-wrapper {
-  background: $colour-fuse-blue;
+  background: $colour-fuse-blue-saturated;
   width: 100%;
 }
 
@@ -982,7 +1034,7 @@ button {
   h2 {
     color: $colour-white;
     font-weight: normal;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-transform: uppercase;
   }
 }
@@ -990,4 +1042,210 @@ button {
 .about-body, .contact-body {
   @extend %centre-block;
   min-height: 80%;
+  align-items: flex-start;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  h1 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: $colour-fuse-blue;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-top: 0.5rem;
+  }
+}
+
+.about-body {
+  flex-direction: column;
+}
+
+.contact-body {
+  flex-wrap: wrap;
+}
+
+.about-methods {
+  display: flex;
+  margin: 0;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  width: 60%;
+  display: inline-block;
+  box-sizing: border-box;
+  float: left;
+
+  @include respond-to('med') {
+    width: 100%;
+  }
+}
+
+.about-video {
+  width: 40%;
+  display: inline-flex;
+  box-sizing: border-box;
+  float: right;
+  padding: 1.5rem;
+  justify-content: center;
+
+  @include respond-to('med') {
+    width: 100%;
+  }
+}
+
+.about-method {
+  width: 30%;
+  text-align: center;
+  box-sizing: border-box;
+
+  @include respond-to('sm') {
+    width: 100%;
+  }
+
+  h2 {
+    color: $colour-fuse-orange;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  p {
+    padding: 0 0.5rem;
+    margin-top: 0;
+  }
+
+  .about-icon {
+    margin: auto;
+    height: 3rem;
+    width: 3rem;
+    min-height: 3rem;
+    min-height: 3rem;
+    border-radius: 50%;
+    color: $colour-fuse-blue;
+    background: $colour-white;
+    transition: $quick-transition;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: $shadow-light;
+
+    &:hover {
+      color: $colour-white;
+      background: $colour-fuse-blue;
+    }
+  }
+}
+
+.contact-form {
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 60%;
+  float: left;
+  box-sizing: border-box;
+
+  @include respond-to('sm') {
+    width: 100%;
+  }
+
+  label {
+    text-transform: uppercase;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .form-input {
+    width: 100%;
+    height: 3rem;
+    margin-top: 0.5rem;
+    border: none;
+    box-shadow: $shadow-light;
+    padding: 0 0.5rem;
+    font-size: 1rem;
+
+    &:focus {
+      outline: none;
+      box-shadow: $shadow-medium;
+    }
+  }
+
+  .form-textarea {
+    width: 100%;
+    height: 10rem;
+    margin-top: 0.5rem;
+    border: none;
+    box-shadow: $shadow-light;
+    padding: 0.5rem;
+    font-size: 1rem;
+
+    &:focus {
+      outline: none;
+      box-shadow: $shadow-medium;
+    }
+  }
+
+  .form-send {
+    margin-top: 2rem;
+    border: none;
+    background: $colour-fuse-blue-saturated;
+    color: $colour-white;
+    text-transform: uppercase;
+    transition: $quick-transition;
+    font-size: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.form-person {
+  display: inline-block;
+  width: 40%;
+  float: right;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  text-align: center;
+
+  @include respond-to('sm') {
+    width: 100%;
+  }
+
+  .form-image {
+    width: 70%;
+    background: url('../images/fuse_icon_borderless.png');
+    background-size: cover;
+    margin: auto;
+    border-radius: 50%;
+    max-width: 250px;
+
+    @include respond-to('sm') {
+      width: 40%;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-weight: normal;
+    color: $colour-fuse-blue;
+  }
+
+  a {
+    color: $colour-fuse-blue-saturated;
+  }
 }

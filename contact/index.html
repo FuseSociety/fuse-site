@@ -36,6 +36,15 @@
 <script src="../js/smooth-scrolling.js"></script>
 <script src="../js/script.js"></script>
 
+<!-- loading -->
+<div id="loading_container">
+  <div id="loading">
+    <p><span id="one">.</span><span id="two">.</span><span id="three">.</span></p>
+    <h1>FUSE Society</h1>
+  </div>
+</div>
+<!-- /loading -->
+
 <!-- home-page -->
 <div class="home-page">
 
@@ -126,7 +135,31 @@
 
   <!-- contact-body -->
   <div class="contact-body">
+    <div class="form-person">
+      <div class="form-image"></div>
+      <h2>We're here for you.</h2>
+      <a href="mailto:contact@fusesociety.com">contact@fusesociety.com</a>
+    </div>
 
+    <form class="contact-form" action="https://formspree.io/alan_ma@live.ca" method="POST">
+      <label>
+        Your name
+        <input class="form-input" required type="text" name="name">
+      </label>
+      <label>
+        Subject
+        <input class="form-input" required type="text" name="_subject"/>
+      </label>
+      <label>
+        Your email
+        <input class="form-input" required type="email" name="email"/>
+      </label>
+      <label>
+        Your email
+        <textarea class="form-textarea" required name="body"></textarea>
+      </label>
+      <input class="form-send" type="submit" value="Send">
+    </form>
   </div>
 
   <!-- home-footer -->
