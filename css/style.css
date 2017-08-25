@@ -661,10 +661,10 @@ button {
       transform: translateX(100%);
       clip-path: polygon(100% 0, 60% 0, 70% 100%, 100% 100%, 100% 0);
       -webkit-clip-path: polygon(100% 0, 60% 0, 70% 100%, 100% 100%, 100% 0); }
-  .branch .calgary {
-    background: url("../images/calgary_small.jpg");
+  .branch .alberta {
+    background: url("../images/alberta.jpg");
     background-size: cover; }
-    .branch .calgary::before {
+    .branch .alberta::before {
       -webkit-transform: translateX(-100%);
       -ms-transform: translateX(-100%);
       transform: translateX(-100%);
