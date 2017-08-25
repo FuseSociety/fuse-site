@@ -298,12 +298,11 @@ p {
 
 .nav-sub {
   list-style: none;
-  padding: 0.5rem 3.5rem 0.5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   cursor: pointer;
   background: transparent;
-  width: 100%;
   background: $colour-fuse-orange;
-  overflow: hidden;
+  display: inline-block;
 
   &:hover {
     text-decoration: underline;
