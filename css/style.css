@@ -786,44 +786,10 @@ button {
   margin-top: 50px;
   max-width: 100%;
   min-height: auto;
-  overflow: hidden;
   position: relative; }
-  .home-sponsors:hover .scrolling {
-    -webkit-animation-play-state: paused !important;
-    animation-play-state: paused !important; }
   @media (max-width: 1024px) {
     .home-sponsors {
       padding: 1rem; } }
-  .home-sponsors .scrolling {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    -ms-flex-pack: distribute;
-    justify-content: space-around; }
-    .home-sponsors .scrolling.first {
-      -webkit-animation: scroll-left-first infinite 15s linear;
-      animation: scroll-left-first infinite 15s linear; }
-      @media (max-width: 720px) {
-        .home-sponsors .scrolling.first {
-          visibility: hidden; } }
-    .home-sponsors .scrolling.second {
-      position: absolute;
-      left: 0;
-      -webkit-animation: scroll-left-second infinite 15s linear;
-      animation: scroll-left-second infinite 15s linear; }
-      @media (max-width: 720px) {
-        .home-sponsors .scrolling.second {
-          visibility: hidden; } }
-    .home-sponsors .scrolling.small {
-      -webkit-animation: scroll-left infinite 15s linear;
-      animation: scroll-left infinite 15s linear;
-      visibility: hidden;
-      position: absolute;
-      left: 0; }
-      @media (max-width: 720px) {
-        .home-sponsors .scrolling.small {
-          visibility: visible; } }
   .home-sponsors img {
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
@@ -842,54 +808,9 @@ button {
     @media (max-width: 1024px) {
       .home-sponsors img {
         height: 70px; } }
-
-@-webkit-keyframes scroll-left {
-  0% {
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%); }
-  100% {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%); } }
-
-@keyframes scroll-left {
-  0% {
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%); }
-  100% {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%); } }
-
-@-webkit-keyframes scroll-left-first {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0); }
-  100% {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%); } }
-
-@keyframes scroll-left-first {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0); }
-  100% {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%); } }
-
-@-webkit-keyframes scroll-left-second {
-  0% {
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%); }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0); } }
-
-@keyframes scroll-left-second {
-  0% {
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%); }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0); } }
+  .home-sponsors.affiliates {
+    margin-top: 0;
+    padding: 1rem 1rem; }
 
 #sponsors {
   background: white;
@@ -917,9 +838,6 @@ button {
   max-height: 150px;
   max-width: 350px;
   margin: 20px; }
-
-#sponsors .primary {
-  padding-top: 30px; }
 
 @media (max-width: 1024px) {
   #sponsors {
