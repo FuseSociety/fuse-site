@@ -322,9 +322,9 @@ p {
   justify-content: center;
   position: relative; }
   .home-title .background-image {
-    background: url("../images/people/ont_exec_team_gray.JPG");
+    background: url("../images/alternate_background.jpg");
     background-size: cover;
-    background-position: center top;
+    background-position: center bottom;
     background-attachment: fixed; }
     @media (max-width: 1024px) {
       .home-title .background-image {
