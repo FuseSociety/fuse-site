@@ -27,15 +27,23 @@ h3 {
   width: 100%;
   display: flex;
   position: relative;
+  overflow: hidden;
 }
 
 .frame.one {
-  background: url('images/background_one_edited.jpg');
-  background-size: cover;
-  background-position: bottom left;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.one .bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: url('images/background_one_edited.jpg');
+  background-size: cover;
+  background-position: bottom left;
+  transform: scale(1.1);
 }
 
 .one .content {
@@ -80,7 +88,7 @@ h3 {
 #gradient {
   height: 100%;
   width: 100%;
-  opacity: 0.1;
+  opacity: 0.2;
   position: absolute;
 }
 

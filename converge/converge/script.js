@@ -1,14 +1,36 @@
+var lFollowX = 0,
+// lFollowY = 0,
+x = 0,
+// y = 0,
+friction = 1 / 30;
+
+function moveBackground() {
+  x += (lFollowX - x) * friction;
+  // y += (lFollowY - y) * friction;
+
+  // translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
+  translate = 'translate(' + x + 'px) scaleX(1.1)';
+
+  $('.bg').css({
+    '-webit-transform': translate,
+    '-moz-transform': translate,
+    'transform': translate
+  });
+
+  window.requestAnimationFrame(moveBackground);
+}
 
 var colors = new Array(
-  [62,35,255],
-  [60,255,60],
-  [255,35,98],
-  [45,175,230],
-  [255,0,255],
-  [255,128,0]);
+  [32, 56, 100],
+  [237, 125, 50],
+  [17, 57, 132],
+  [255, 116, 3],
+  [43, 55, 77],
+  [32, 56, 100]
+);
 
 var step = 0;
-//color table indices for: 
+// color table indices for: 
 // current color left
 // next color left
 // current color right
@@ -37,12 +59,17 @@ function updateGradient() {
   var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
   var color2 = "rgb("+r2+","+g2+","+b2+")";
 
-  $('#gradient').css({
-    background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
-      background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+  $('#gradient')
+    .css({
+      background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"
+    })
+    .css({
+      background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"
+    });
     
     step += gradientSpeed;
-    if ( step >= 1 ) {
+
+    if (step >= 1) {
       step %= 1;
       colorIndices[0] = colorIndices[1];
       colorIndices[2] = colorIndices[3];
@@ -51,7 +78,6 @@ function updateGradient() {
       //do not pick the same as the current one
       colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
       colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
-      
     }
 }
 
@@ -61,7 +87,15 @@ $(document).ready(function() {
     anchors:['firstPage', 'secondPage', 'thirdPage', 'fourthPage']
   });
 
+  moveBackground();
   setInterval(updateGradient, 0.3);
+
+  $(window).on('mousemove', function(e) {
+    var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
+    // var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
+    lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+    // lFollowY = (10 * lMouseY) / 100;
+  });
 });
 
 function moveDown() {
