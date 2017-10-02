@@ -1,0 +1,148 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: #fff;
+}
+
+h1 {
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+  font-size: 6.5rem;
+  text-shadow: 3px 3px 7px #333;
+}
+
+h3 {
+  font-family: 'Raleway';
+  margin-top: 10px;
+  text-shadow: 2px 2px 2px #555;
+}
+
+.frame {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.frame.one {
+  background: url('images/background_one_edited.jpg');
+  background-size: cover;
+  background-position: bottom left;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.one .content {
+  padding: 25px 35px;
+  position: relative;
+}
+
+.one .logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+}
+
+.one .logo img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.one .corner {
+  position: absolute;
+  width: 20%;
+  min-width: 100px;
+  height: 20%;
+  min-height: 30px;
+}
+
+.corner.top {
+  top: -10px;
+  left: -10px;
+  border-top: 10px solid #fff;
+  border-left: 10px solid #fff;
+}
+
+.corner.bottom {
+  bottom: -10px;
+  right: -10px;
+  border-bottom: 10px solid #fff;
+  border-right: 10px solid #fff;
+}
+
+#gradient {
+  height: 100%;
+  width: 100%;
+  opacity: 0.1;
+  position: absolute;
+}
+
+.frame.one .arrow {
+  margin-top: 40px;
+  height: 60px;
+  width: 50px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.frame.one .arrow:hover div {
+  border-left: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+}
+
+.frame.one .arrow div {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb04 2s infinite;
+  animation: sdb04 2s infinite;
+  box-sizing: border-box;
+}
+
+@-webkit-keyframes sdb04 {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+  }
+  20% {
+    -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  40% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+  }
+}
+@keyframes sdb04 {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+  20% {
+    transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  40% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+}
+
+.frame.two {
+  background: green;
+}
+
+.frame.three {
+  background: blue;
+}
+
+.frame.four {
+  background: yellow;
+}
+

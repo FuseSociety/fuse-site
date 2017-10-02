@@ -108,6 +108,8 @@ p {
       background: rgba(32, 56, 100, 0.9);
       -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+    .home-navbar.stick .has-sub {
+      background: rgba(32, 56, 100, 0.9); }
   @media (max-width: 1024px) {
     .home-navbar {
       display: none; } }
@@ -137,7 +139,19 @@ p {
   font-size: 1.2rem;
   margin-bottom: 5px;
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  transition: 0.3s; }
+  .nav-item .has-sub {
+    position: absolute;
+    height: calc(100% + 2px);
+    width: 100%;
+    background: #ed7d32;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: visibility 0s, opacity 0.3s; }
   .nav-item span {
     border-bottom: 2px solid transparent;
     padding-bottom: 10px;
@@ -151,6 +165,9 @@ p {
       border-bottom: 2px solid white; }
       .nav-item span.selected.no-underline, .nav-item span:hover.no-underline {
         border-bottom: 2px solid transparent; }
+      .nav-item span.selected + .nav-sub-container + .has-sub, .nav-item span:hover + .nav-sub-container + .has-sub {
+        visibility: visible;
+        opacity: 1; }
       .nav-item span.selected + .nav-sub-container, .nav-item span:hover + .nav-sub-container {
         visibility: visible;
         opacity: 1; }
@@ -167,9 +184,7 @@ p {
 
 .nav-sub-container {
   position: absolute;
-  background: #ed7d32;
   margin: 0 0 0 -1.5rem;
-  width: 100%;
   padding: 90px 0 0 0;
   top: 0;
   text-align: left;
@@ -181,14 +196,16 @@ p {
   .nav-sub-container:hover {
     visibility: visible;
     opacity: 1; }
+    .nav-sub-container:hover + .has-sub {
+      visibility: visible;
+      opacity: 1; }
 
 .nav-sub {
   list-style: none;
   padding: 0.5rem 1.5rem;
   cursor: pointer;
-  background: transparent;
   background: #ed7d32;
-  display: inline-block; }
+  display: block; }
   .nav-sub:hover {
     text-decoration: underline; }
 
@@ -801,10 +818,14 @@ button {
   align-items: center;
   width: 100%; }
 
-#sponsors img {
+.sponsor-image {
   max-height: 150px;
   max-width: 350px;
   margin: 20px; }
+  .sponsor-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
 
 @media (max-width: 1024px) {
   #sponsors {
