@@ -81,14 +81,66 @@ function updateGradient() {
     }
 }
 
+function background_three() {
+  var canvas = document.getElementById("three_background");
+	var ctx = canvas.getContext("2d");
+	ctx.canvas.width = window.innerWidth;
+	ctx.canvas.height = window.innerHeight;
+
+	class shape {
+		constructor(x, y, xs, ys, xv, yv) {
+			this.x = x;
+			this.y = x; // square
+			this.xv = xv;
+			this.yv = yv;
+			this.xs = xs;
+			this.ys = ys;
+		}
+
+		update() {
+			this.x += this.xv;
+			this.y += this.yv;
+
+			if (this.x + this.xs > canvas.width || this.x < 0) {
+				this.xv *= -1;
+			}
+			if (this.y + this.ys > canvas.height || this.y < 0) {
+				this.yv *= -1;
+			}
+		}
+	}
+
+	var shapes = [];
+	for (i=0; i<10; i++) {
+		shapes.push(new shape(canvas.width*(Math.random()*0.8+0.1), canvas.height*(Math.random()*0.8+0.1), 100 + 20*Math.random(), 100 + 20*Math.random(), 0.2 + 2*(Math.random()-0.5), 0.2 + 2*(Math.random()-0.5)))
+	}
+	setInterval(function() {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+		for (i=0; i<shapes.length; i++) {
+			shapes[i].update();
+			ctx.beginPath();
+			ctx.fillStyle = "#e5e5e5";
+			ctx.fillRect(shapes[i].x, shapes[i].y, shapes[i].xs, shapes[i].ys);
+		}
+	});
+}
+
 $(document).ready(function() {
 	$('#fullpage').fullpage({
     loopBottom: true,
-    anchors:['firstPage', 'secondPage', 'thirdPage', 'fourthPage']
+    anchors:['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
+    scrollBar: true,
+    afterRender: function() {
+      window.sr = ScrollReveal();
+      sr.reveal('.two .content');
+      sr.reveal('.topic');
+    }
   });
 
   moveBackground();
   setInterval(updateGradient, 0.3);
+  background_three();
 
   $(window).on('mousemove', function(e) {
     var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
