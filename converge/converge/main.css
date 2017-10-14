@@ -269,7 +269,7 @@ h5 {
   object-fit: cover;
 }
 
-.frame.two, .frame.three {
+.frame.two, .frame.three, .frame.five {
   background: #EDF2F4;
   align-items: center;
   justify-content: center;
@@ -409,15 +409,6 @@ h6 {
   background: #EDF2F4;
 }
 
-.five .content {
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
 
 .speakers {
   width: 100%;
