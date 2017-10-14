@@ -405,8 +405,18 @@ h6 {
   text-align: left;
 }
 
-.frame.five {
+.frame .five {
   background: #EDF2F4;
+}
+
+.five .content {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .speakers {
@@ -429,13 +439,13 @@ h6 {
 .speaker h4 {
   color: #00171F;
   font-family: 'Montserrat';
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: normal;
 }
 
 .speaker p {
   font-family: 'Open Sans';
-  font-size: 0.7rem;
+  font-size: 1.0rem;
   margin: 0;
   white-space: nowrap;
   padding: 3px;
