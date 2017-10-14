@@ -417,6 +417,11 @@ h6 {
   margin-top: 30px;
 }
 
+.speakers h6 {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
 .speaker {
   text-align: left;
   position: relative;
