@@ -418,8 +418,8 @@ h6 {
 }
 
 .speakers h6 {
-  margin-top: 15px;
-  margin-left: 15px;
+  margin-top: -15px;
+  margin-left: -15px;
 }
 
 .speaker {
@@ -435,6 +435,7 @@ h6 {
   font-size: 1.6rem;
   font-weight: normal;
   text-align: left;
+  margin-top: 160px !important;
 }
 
 .speaker p {
@@ -443,6 +444,7 @@ h6 {
   margin: 0;
   white-space: nowrap;
   padding: 3px;
+  ,margin-top: 160px !important;
 }
 
 
