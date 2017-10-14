@@ -282,7 +282,7 @@ h5 {
   position: absolute;
 }
 
-.two .content, .three .content {
+.two .content, .three .content, .five .content {
   width: 100%;
   height: 100%;
   max-width: 1080px;
@@ -404,6 +404,46 @@ h6 {
   line-height: 0.7;
   text-align: left;
 }
+
+.frame.five {
+  background: #EDF2F4;
+}
+
+.speakers {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.speaker {
+  padding: 20px;
+  width: 25%;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+}
+
+
+.speaker h4 {
+  color: #00171F;
+  font-family: 'Montserrat';
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.speaker p {
+  font-family: 'Open Sans';
+  font-size: 1.2rem;
+  margin: 0;
+  color: #EDF2F4;
+  white-space: nowrap;
+  padding: 3px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+
 
 @media screen and (max-width: 1080px) {
   .two .content {
