@@ -384,6 +384,8 @@ h6 {
 
 .register p {
   margin: 0;
+  line-height: 0.7;
+  text-align: left;
 }
 
 .register {
