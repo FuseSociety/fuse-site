@@ -406,7 +406,7 @@ h6 {
 }
 
 .five.content {
-  padding-left: 10px;
+  margin-left: 5px;
   width: 100%;
   height: 100%;
   max-width: 1080px;
@@ -424,8 +424,7 @@ h6 {
 }
 
 .speakers h6 {
-  margin-top: -15px;
-  margin-left: -15px;
+  
 }
 
 .speaker {
@@ -441,7 +440,8 @@ h6 {
   font-size: 1.6rem;
   font-weight: normal;
   text-align: left;
-  margin-top: 160px !important;
+  padding: 8px;
+  margin-top: 210px !important;
 }
 
 .speaker p {
@@ -449,8 +449,7 @@ h6 {
   font-size: 1.0rem;
   margin: 0;
   white-space: nowrap;
-  padding: 3px;
-  ,margin-top: 160px !important;
+  ,margin-top: 210px !important;
 }
 
 
