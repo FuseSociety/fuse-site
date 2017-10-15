@@ -419,18 +419,17 @@ h6 {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 10px;
 }
 
 .speakers h6 {
-  margin-bottom: 70px;
+  margin-bottom: 500px;
+  margin-left: 50px;
 }
 
 .speaker {
   text-align: left;
   position: relative;
-  padding: 5px !important;
+  padding: 20px !important;
 }
 
 
@@ -440,8 +439,7 @@ h6 {
   font-size: 1.6rem;
   font-weight: normal;
   text-align: left;
-  padding: 8px;
-  margin-top: 210px !important;
+  margin-top: 425px !important;
 }
 
 .speaker p {
@@ -449,7 +447,6 @@ h6 {
   font-size: 1.0rem;
   margin: 0;
   white-space: nowrap;
-  ,margin-top: 210px !important;
 }
 
 
