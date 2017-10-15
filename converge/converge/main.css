@@ -415,21 +415,21 @@ h6 {
 }
 
 
+.speakerTitle {
+  margin-left: 45px;
+  margin-top: 45px;
+}
+
 .speakers {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
-.speakers h6 {
-  margin-bottom: 500px;
-  margin-left: 50px;
-}
-
 .speaker {
   text-align: left;
   position: relative;
-  padding: 20px !important;
+  padding: 45px;
 }
 
 
@@ -439,7 +439,7 @@ h6 {
   font-size: 1.6rem;
   font-weight: normal;
   text-align: left;
-  margin-top: 425px !important;
+  margin-top: 50px;
 }
 
 .speaker p {
@@ -517,7 +517,7 @@ h6 {
     font-size: 2rem;
   }
 
-  .two .image-mobile {
+  .two .image-mobile, .five.image-mobile {
     display: block;
   }
 
@@ -528,6 +528,7 @@ h6 {
   .two .image {
     display: none;
   }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -561,10 +562,10 @@ h6 {
     border-right: 3px solid #FDFFFC;
   }
 
-  .two .image-mobile {
+  .two .image-mobile, .five .image-mobile {
     height: 130px;
     width: 150px;
-  }
+  } 
 
   h2 {
     font-size: 1.7rem;
