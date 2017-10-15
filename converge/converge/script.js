@@ -3,7 +3,7 @@
 $(document).ready(function() {
   $('#fullpage').fullpage({
     loopBottom: true,
-    anchors:['converge', 'intro', 'venue', 'register'],
+    anchors:['converge', 'intro', 'speakers', 'venue', 'register'],
     scrollBar: true,
     afterRender: function() {
       window.sr = ScrollReveal();
